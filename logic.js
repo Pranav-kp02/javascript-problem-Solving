@@ -1,0 +1,338 @@
+// 1 longest word
+
+function longestWord(str) {
+  str = str.split(" ");
+  let res = "";
+  for (let i = 0; i < str.length; i++) {
+    if (res.length < str[i].length) {
+      res = str[i];
+    }
+  }
+  console.log(res);
+}
+
+const longestWord2 = (str) => {
+  str = str.split(" ");
+  return str.reduce((acc, cur) => (acc.length < cur.length ? cur : acc), "");
+};
+
+// console.log(longestWord2("this is javascript logic build"));
+
+// generate hasstag
+
+const genRateHassTag = (str) => {
+  if (str.length > 280 || str.trim().length == 0) {
+    return false;
+  }
+  str = str.split(" ");
+  let res = "#";
+  for (let i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    res = res + str[i];
+  }
+  return res;
+};
+
+const genRateHassTag2 = (str) => {
+  if (str.length > 280 || str.trim().length == 0) {
+    return false;
+  }
+  str = str.split(" ");
+
+  str = str.map((ele) => ele.replace(ele[0], ele[0].toUpperCase()));
+  str = `#${str.join("")}`;
+  console.log(str);
+};
+// console.log(genRateHassTag2("hello world mallu"));
+
+// count char
+
+// console.log(mis.indexOf("i", 11));
+
+const countChar = (str, lett) => {
+  lett = lett.toLowerCase();
+  str = str.toLowerCase();
+  let res = [];
+  let index = str.indexOf(lett);
+  while (index !== -1) {
+    res.push(index);
+    index = str.indexOf(lett, ++index);
+  }
+  console.log(res.length);
+};
+
+const countChar2 = (str, lett) => {
+  lett = lett.toLowerCase();
+  str = str.toLowerCase();
+
+  let total = str.split("").reduce((acc, cur) => {
+    if (cur === lett) {
+      ++acc;
+    }
+    return acc;
+  }, 0);
+  console.log(total);
+};
+// countChar2("MissIssippi", "I");
+
+// problem 4
+
+const checkTriangleType = (num1, num2, num3) => {
+  if (num1 == num2 && num2 == num3) {
+    console.log("equilatrel");
+  } else if (num1 !== num2 && num2 !== num3 && num1 !== num3) {
+    console.log("scalene");
+  } else if (num1 === num2 || num2 === num3 || num1 === num3) {
+    console.log("isoslece");
+  }
+};
+// checkTriangleType(1, 4, 3);
+
+// problem 5
+
+const sortAsecnding = (arr) => {
+  let res = [];
+  let sort = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] > arr[j]) {
+        sort = arr[i];
+        arr[i] = arr[j];
+        arr[j] = sort;
+      }
+    }
+  }
+  console.log(arr);
+};
+// sortAsecnding([5, 3, 1, 8]);
+
+// problem 6
+
+const isPalindrom = (str) => {
+  str = str.trim().toLowerCase().replace(/\W/g, "").split(" ");
+
+  let res = [];
+  for (let i = str.length - 1; i >= 0; i--) {
+    res.push(str[i]);
+  }
+  res = res.join("");
+  str = str.join("");
+  console.log(str, res);
+
+  if (str !== res) {
+    return false;
+  }
+  return true;
+};
+// console.log(isPalindrom("A man, a plan, a canal, Panama "));
+
+// 7
+
+const maxarray = (arr) => {
+  let res = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (res < arr[i]) {
+      res = arr[i];
+    }
+  }
+  console.log(res);
+};
+
+// maxarray([5]);
+
+// 8
+
+const factorialCheck = (num) => {
+  let res = 1;
+  for (let i = 1; i <= num; i++) {
+    res = res * i;
+  }
+  console.log(res);
+};
+// factorialCheck(3);
+
+// 9
+
+const averageOfArr = (arr) => {
+  let res = arr.reduce((acc, cur) => acc + cur, 0) / arr.length;
+  console.log(res);
+};
+// averageOfArr([5, 10, 2, 8]);
+
+// 10
+
+const isBothArrEqual = (arr1, arr2) => {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  return arr1.every((curr, index) => curr === arr2[index]);
+};
+// console.log(isBothArrEqual([1, 2, 3], [1, 2, 3, 4]));
+
+// 11
+
+const totalSumOfElement = (num) => {
+  let array = Array.from(String(num), Number);
+  return array.reduce((curr, acc) => curr + acc, 0);
+};
+// console.log(totalSumOfElement(1234));
+
+// 12
+
+const duplicateArryFinder = (arr) => {
+  let newArr = [...new Set(arr)];
+  console.log(newArr);
+};
+// duplicateArryFinder([1, 2, 3, 2, 1, 4]);
+
+// 13
+
+const vowelsCounder = (str) => {
+  str = str.toLowerCase();
+  let vowels = "aeiou";
+  let vowelsCounter = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      vowelsCounter += 1;
+    }
+  }
+  console.log(vowelsCounter);
+};
+
+// vowelsCounder("BrrP");
+
+// 14
+
+const powerOfTwo = (num) => {
+  for (let i = 0; i <= num; i++) {
+    if (Math.pow(2, i) === num || num == 0) {
+      return true;
+    }
+  }
+  return false;
+};
+
+// console.log(powerOfTwo(0));
+
+// 15
+
+const squareOfArrAy = (arr) => {
+  let res = arr.reduce((acc, cur) => acc + cur * cur, 0);
+  console.log(res);
+};
+// squareOfArrAy([1, 2, 3, 4]);
+
+// 16
+
+const shortestNUmber = (arr) => {
+  let arr1 = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr1 > arr[i]) {
+      arr1 = arr[i];
+    }
+  }
+  console.log(arr1);
+};
+
+// shortestNUmber([15, 10, -8]);
+
+// 17
+
+const camelCase = (str) => {
+  str = str.toLowerCase().split(" ");
+  str = str.map((curr, index) => {
+    if (index === 0) {
+      return curr;
+    } else {
+      return curr.charAt(0).toUpperCase() + curr.slice(1).toLowerCase();
+    }
+  });
+  console.log(str.join(""));
+};
+// camelCase("hello World SUNMO");
+
+const snakeCase = (str) => {
+  str = str.toLowerCase().split(" ");
+
+  str = str.map((curr, index) => {
+    if (index === 0) {
+      return curr;
+    } else {
+      return "_" + curr;
+    }
+  });
+  console.log(str.join(""));
+};
+
+// snakeCase("hello world");
+
+const isLowerCase = (str) => {
+  let res = str.toLowerCase();
+  if (res !== str) {
+    return false;
+  }
+  return true;
+};
+
+// console.log(isLowerCase("b"));
+
+// 19
+
+const substring = (str, str2) => {
+  str2 = str2.toLowerCase();
+  str = str.toLowerCase().split(" ");
+  for (let i = 0; i < str.length; i++) {
+    if (str[0] === str2) {
+      return true;
+    }
+    return false;
+  }
+};
+
+// console.log(substring("Hello world", "hello"));
+
+// 20
+
+const reverserString = (str) => {
+  return (str = str.split("").reverse().join(""));
+};
+// console.log(reverserString("hello"));
+
+// 21
+
+const calculateMean = (arr) => {
+  let res = arr.reduce((acc, cur) => acc + cur, 0);
+  console.log(res / arr.length);
+};
+
+// calculateMean([0]);
+
+// 22
+
+const calcMedium = (arr) => {
+  let res = arr.sort((a, b) => a + b);
+  if (res.length % 2 === 0) {
+    console.log((res[res.length / 2] + res[res.length / 2 - 1]) / 2, res);
+  } else {
+    console.log(res[(res.length / 2).toFixed() - 1], res);
+  }
+};
+// calcMedium([1, 3, 5, 7, 9, 11]);
+
+// 23
+
+const repitationCheck = (arr) => {
+  let obj = {};
+  for (let i = 0; i < arr.length; i++) {
+    let count = 0;
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        count++;
+      }
+    }
+    obj[arr[i]] = count;
+  }
+  console.log(obj);
+};
+
+// repitationCheck([1, 2, 2, 3, 1, 4, 2]);
