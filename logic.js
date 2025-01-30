@@ -1,4 +1,4 @@
-// there is update in for git helllo
+// JavaScript Coding Challenges🔥
 
 // 1 longest word
 
@@ -338,3 +338,104 @@ const repitationCheck = (arr) => {
 };
 
 // repitationCheck([1, 2, 2, 3, 1, 4, 2]);
+
+// 24
+
+const findMode = (arr) => {
+  let obj = {};
+  let max = 0;
+  let mode;
+
+  for (let i = 0; i < arr.length; i++) {
+    let count = 0;
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        count++;
+      }
+    }
+    obj[arr[i]] = count;
+
+    if (obj[arr[i]] > max) {
+      max = obj[arr[i]];
+      mode = arr[i];
+    }
+  }
+  // console.log(mode);
+};
+// findMode([1, 2, 2, 3, 1, 4, 2]);
+
+// 25
+
+const factorial = (num) => {
+  if (num === 1) {
+    return 1;
+  } else {
+    return num * factorial(num - 1);
+  }
+};
+// console.log(factorial(5));
+
+// 26
+
+const finbonachiSeries = (num) => {
+  if (num <= 1) {
+    return num;
+  } else {
+    return finbonachiSeries(num - 1) + finbonachiSeries(num - 2);
+  }
+};
+// console.log(finbonachiSeries(5));
+
+// 27
+
+const repetstring = (str, num) => {
+  let res = "";
+  for (let i = 0; i < num; i++) {
+    res += str;
+  }
+  console.log(res);
+};
+
+// repetstring("abc", 5);
+
+// 28
+
+const trancate = (str, num) => {
+  // str = str.split("");
+  let res = [];
+  for (let i = 0; i < str.length; i++) {
+    if (i < 8) {
+      res.push(str[i]);
+    }
+  }
+  return res.join("") + "...";
+};
+
+const trancate2 = (str, num) => {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
+  }
+};
+
+// console.log(trancate2("a-tisket a tick tac toa", 8));
+
+// 29
+
+const numberRange = (num1, num2) => {
+  let res = [];
+  for (let i = num1; i <= num2; i++) {
+    res.push(num1++);
+  }
+  console.log(res);
+};
+// numberRange(-2, 2);
+
+const numberRangeRecurtion = (num1, num2, arr = []) => {
+  if (num1 <= num2) {
+    arr.push(num1);
+    return numberRangeRecurtion(num1 + 1, num2, arr);
+  }
+  console.log(arr);
+};
+
+console.log(numberRangeRecurtion(3, 7));
