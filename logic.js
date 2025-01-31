@@ -438,4 +438,36 @@ const numberRangeRecurtion = (num1, num2, arr = []) => {
   console.log(arr);
 };
 
-console.log(numberRangeRecurtion(3, 7));
+// console.log(numberRangeRecurtion(3, 7));
+
+// 31
+
+const paswordValidation = (str) => {
+  if (str.length < 8) {
+    return false;
+  }
+  let uppercCse = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let lowercase = uppercCse.toLowerCase();
+
+  let upper = false;
+  let lower = false;
+  let num = false;
+  for (let i = 0; i < str.length; i++) {
+    if (uppercCse.includes(str[i])) {
+      upper = true;
+    } else if (lowercase.includes(str[i])) {
+      lower = true;
+    } else if (!isNaN(Number(str[i]))) {
+      num = true;
+    }
+  }
+  return upper && lower && num;
+};
+
+// console.log(paswordValidation("ABCDEfghi12"));
+
+const hexaColor = () => {
+  return Math.random().toString(16).slice(2, 8);
+};
+
+console.log("#" + hexaColor());
