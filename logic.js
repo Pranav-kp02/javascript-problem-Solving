@@ -470,4 +470,38 @@ const hexaColor = () => {
   return Math.random().toString(16).slice(2, 8);
 };
 
-console.log("#" + hexaColor());
+// console.log("#" + hexaColor());
+
+// 34
+
+const removeDuplicate = (arr) => {
+  console.log(new Set(arr));
+};
+
+// removeDuplicate([1, 2, 3, 3, 4, 4, 5]);
+
+const isEmpty = (obj) => {
+  let objKey = Object.keys(obj);
+  if (objKey.length === 0) {
+    return "its empty";
+  }
+
+  for (let i = 0; i < objKey.length; i++) {
+    if (!obj[objKey[i]]) {
+      return "its empty";
+    }
+    return "its not empty";
+  }
+};
+// console.log(isEmpty({}));
+
+// 36
+
+const obj = {
+  name: "aloce",
+  age: 19,
+  palce: "mumbai",
+};
+let enteris = Object.entries(obj).flat();
+console.log(enteris);
+// console.log(Object.fromEntries(enteris));
