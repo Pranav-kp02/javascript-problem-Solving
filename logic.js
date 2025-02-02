@@ -503,5 +503,41 @@ const obj = {
   palce: "mumbai",
 };
 let enteris = Object.entries(obj).flat();
-console.log(enteris);
+// console.log(enteris);
 // console.log(Object.fromEntries(enteris));
+
+// 37
+
+const simpleIntrest = (amt, yr, tm) => {
+  return (amt * yr * tm) / 100;
+};
+// console.log(simpleIntrest(1000, 5, 3));
+
+// 38
+
+const daysBetween = (dat1, dat2) => {
+  let date1 = new Date(dat1);
+  let date2 = new Date(dat2);
+  // console.log(date1, date2);
+
+  let diff = (date2 - date1) / (24 * 60 * 60 * 1000);
+  console.log(diff);
+};
+
+// daysBetween("2000-02-01", "2040-02-01");
+
+const ageFinder = (dob) => {
+  let dobDate = new Date(dob);
+  let crrDate = new Date();
+
+  let yearDiff = crrDate.getFullYear() - dobDate.getFullYear();
+
+  let monthDiff = crrDate.getMonth() - dobDate.getMonth();
+
+  if (monthDiff < 0 || crrDate.getDate() < dobDate.getDate()) {
+    yearDiff--;
+  }
+  console.log(yearDiff);
+};
+
+ageFinder("2002-02-13");
