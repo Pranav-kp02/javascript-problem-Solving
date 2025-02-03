@@ -540,4 +540,71 @@ const ageFinder = (dob) => {
   console.log(yearDiff);
 };
 
-ageFinder("2002-02-13");
+// ageFinder("2002-02-13");
+
+const graphGenerater = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    let str = "";
+    for (let j = 1; j <= arr[i]; j++) {
+      str += "*";
+    }
+    console.log(`${i + 1}: ${str}`);
+  }
+};
+
+const graphGenerater2 = (arr) => {
+  return arr
+    .map((ele, index) => {
+      return `${index + 1}:  ${"*".repeat(ele)}`;
+    })
+    .join("\n");
+};
+// console.log(graphGenerater2([5, 3, 9, 2]));
+
+// graphGenerater([5, 3, 9, 2]);
+
+// 41
+
+let rate = {
+  usd: 1,
+  eur: 0.9,
+  inr: 80,
+};
+
+const currencyConveter = (base, currCnt, convt) => {
+  let amoutUsd = 0;
+  if (currCnt !== "usd") {
+    amoutUsd = base / rate[currCnt];
+  } else {
+    amoutUsd = base;
+  }
+
+  let convetedAmt = 0;
+  if (convt !== "usd") {
+    convetedAmt = amoutUsd * rate[convt];
+  } else {
+    convetedAmt = amoutUsd;
+  }
+  console.log(convetedAmt);
+};
+// currencyConveter(100, "inr", "eur");
+
+// 43
+
+const fizzBuzz = (num1, num2) => {
+  let res = [];
+  for (let i = num1; i <= num2; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      res.push("fizzBuzz");
+    } else if (i % 3 === 0) {
+      res.push("fizz");
+    } else if (i % 5 === 0) {
+      res.push("buzz");
+    } else {
+      res.push(i);
+    }
+  }
+  console.log(res);
+};
+
+fizzBuzz(10, 20);
