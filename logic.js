@@ -607,4 +607,47 @@ const fizzBuzz = (num1, num2) => {
   console.log(res);
 };
 
-fizzBuzz(10, 20);
+// fizzBuzz(10, 20);
+
+// 42
+
+const validCardCheck = (num) => {
+  num = num.split("").filter((ele) => ele !== " ");
+  // console.log(num);
+
+  let revnum = [];
+
+  for (let i = num.length - 1; i >= 0; i--) {
+    if (i % 2 === 0) {
+      if (Number(num[i]) * 2 > 9) {
+        revnum.push(Number(num[i] * 2) - 9);
+      } else {
+        revnum.push(Number(num[i]) * 2);
+      }
+    } else {
+      revnum.push(Number(num[i]));
+    }
+  }
+
+  let total = revnum.reduce((acc, curr) => acc + curr, 0);
+  console.log(revnum, total);
+  return total % 10 === 0;
+};
+
+// console.log(validCardCheck("6522 9407 9354 6121"));
+
+// 43
+
+const emailValidation = (str) => {
+  return /^[A-Za-z0-9]+(?:[.%_+][A-Za-z0-9]+)*@[A-Za-z0-9]+\.[A-Za-z]{2,}$/.test(
+    str
+  );
+};
+
+// console.log(emailValidation("tom@tom.com"));
+
+const passwordValidation2 = (str) => {
+  return /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])(?=.*[\W_]).{8,}$/.test(str);
+};
+
+console.log(passwordValidation2("Pass123"));
