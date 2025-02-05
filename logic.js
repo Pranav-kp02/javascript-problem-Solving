@@ -650,4 +650,16 @@ const passwordValidation2 = (str) => {
   return /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])(?=.*[\W_]).{8,}$/.test(str);
 };
 
-console.log(passwordValidation2("Pass123"));
+// console.log(passwordValidation2("Pass123"));
+
+const phoneNumber = (num) => {
+  return /^[6-9][0-9]{9}$/.test(num);
+};
+
+// console.log(phoneNumber(1345672890));
+
+const extractNumber = (str) => {
+  let reg = /\d+/g;
+  console.log(str.match(reg));
+};
+extractNumber("abc123cd45");
