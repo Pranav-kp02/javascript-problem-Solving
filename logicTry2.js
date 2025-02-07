@@ -38,4 +38,44 @@ const checkTriagle = (s1, s2, s3) => {
     return "issolateal";
   }
 };
-console.log(checkTriagle(5, 4, 3));
+// console.log(checkTriagle(5, 4, 3));
+
+// 12
+
+const duplicateCheck = (arr) => {
+  console.log(...new Set(arr));
+};
+
+const duplicateCheck2 = (arr) =>
+  arr.filter((value, index, self) => self.indexOf(value) === index);
+
+// console.log(duplicateCheck2([1, 2, 3, 2, 1, 4]));
+
+// 17
+
+const camelCaseConveter = (str) => {
+  str = str.split(" ");
+  console.log(str);
+
+  let val = str.map((curr, index) => {
+    if (index === 0) {
+      return curr.toLowerCase();
+    } else {
+      return curr.charAt(0).toUpperCase() + curr.slice(1).toLowerCase();
+    }
+  });
+  console.log(val.join(""));
+};
+
+// camelCaseConveter("hello world");
+
+// 23
+
+// const arr = [1, 2, 2, 3, 1, 4, 2];
+// let count = {};
+
+// for (let ele of arr) {
+//   count[ele] = (count[ele] || 0) + 1;
+// }
+
+// console.log(count);
