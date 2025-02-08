@@ -79,3 +79,64 @@ const camelCaseConveter = (str) => {
 // }
 
 // console.log(count);
+
+// 24
+
+const modeFinder = (arr) => {
+  let count = {};
+  for (let ele of arr) {
+    count[ele] = (count[ele] || 0) + 1;
+  }
+
+  let big = 0;
+  let key = "";
+
+  for (let ele of arr) {
+    if (count[ele] > big) {
+      big = count[ele];
+      key = ele;
+    }
+    console.log(key, big);
+  }
+  console.log(key);
+};
+
+// modeFinder([1, 2, 2, 3, 1, 4, 3, 3, 3, 2]);
+
+// 25
+
+const factorial = (num) => {
+  let res = 1;
+  for (let i = 1; i <= num; i++) {
+    res = res * i;
+  }
+  // console.log(res);
+};
+
+// factorial(5);
+
+const factorial2 = (num) => {
+  if (num === 1) {
+    return 1;
+  } else {
+    console.log(num);
+
+    return num * factorial2(num - 1);
+  }
+};
+
+// console.log(factorial2(5));
+
+// 26
+
+const fibonachiSeries = (num) => {
+  if (num <= 1) {
+    return num;
+  } else {
+    console.log(num);
+
+    return fibonachiSeries(num - 1) + fibonachiSeries(num - 2);
+  }
+};
+
+// console.log(fibonachiSeries(4));
