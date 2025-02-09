@@ -140,3 +140,30 @@ const fibonachiSeries = (num) => {
 };
 
 // console.log(fibonachiSeries(4));
+
+// 29
+
+const numberRange = (num1, num2, arr = []) => {
+  if (num1 <= num2) {
+    arr.push(num1);
+    return numberRange(num1 + 1, num2, arr);
+  }
+  return arr;
+};
+// console.log(numberRange(0, 5));
+
+// 33
+
+const randomHexGen = () => {
+  let gen = Math.random().toString(16).slice(2, 8);
+  console.log("#" + gen);
+};
+
+// randomHexGen();
+
+// 34
+
+const removeDuplicet = (arr) => {
+  console.log(...new Set(arr));
+};
+removeDuplicet([1, 2, 2, 3, 4, 4, 5]);
