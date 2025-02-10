@@ -166,4 +166,34 @@ const randomHexGen = () => {
 const removeDuplicet = (arr) => {
   console.log(...new Set(arr));
 };
-removeDuplicet([1, 2, 2, 3, 4, 4, 5]);
+// removeDuplicet([1, 2, 2, 3, 4, 4, 5]);
+
+// 35
+
+const emptyObj = (obj) => {
+  return Object.keys(obj).length === 0 ? "empty" : "not empty";
+};
+
+// console.log(emptyObj({ name: "nua" }));
+
+const objToArr = (obj) => {
+  let arr = Object.entries(obj);
+  console.log(arr);
+  let objCon = Object.fromEntries(arr);
+  console.log(objCon);
+};
+
+// objToArr({
+//   name: "tom",
+//   age: 21,
+//   place: "kochi",
+// });
+
+const daysCounter = (d1, d2) => {
+  let day1 = new Date(d1);
+  let day2 = new Date(d2);
+  let diff = day2 - day1;
+  console.log(diff / (24 * 60 * 60 * 1000));
+};
+
+daysCounter("2024-01-01", "2024-01-31");
