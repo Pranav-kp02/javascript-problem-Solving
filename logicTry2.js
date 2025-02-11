@@ -196,4 +196,43 @@ const daysCounter = (d1, d2) => {
   console.log(diff / (24 * 60 * 60 * 1000));
 };
 
-daysCounter("2024-01-01", "2024-01-31");
+// daysCounter("2024-01-01", "2024-01-31");
+
+const ageFinder = (brtday) => {
+  brtday = new Date(brtday);
+  let today = new Date();
+  let age = today.getFullYear() - brtday.getFullYear();
+  let month = today.getMonth() - brtday.getMonth();
+  if (month < 0 || (month === 0 && today.getDay() < brtday.getDay())) {
+    age--;
+  }
+  console.log(age);
+};
+
+// ageFinder("2002-02-13");
+
+const rate = {
+  USD: 1,
+  EUR: 0.9,
+  GBR: 0.8,
+  INR: 80,
+};
+
+const currencyConvet = (amout, fc, tc) => {
+  let usdMoney = 0;
+  if (fc !== "USD") {
+    usdMoney = amout / rate[fc];
+  } else {
+    usdMoney = amout;
+  }
+
+  let convetedAmt = 0;
+  if (tc !== "USD") {
+    convetedAmt = amout * rate[tc];
+  } else {
+    convetedAmt = usdMoney;
+  }
+
+  console.log(convetedAmt);
+};
+// currencyConvet(100, "USD", "INR");
