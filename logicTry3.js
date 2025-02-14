@@ -82,4 +82,33 @@ const dup = (arr) => {
   console.log(...new Set(arr));
 };
 
-dup(arry1);
+// dup(arry1);
+
+const factorial = (num) => {
+  if (num === 1) {
+    return 1;
+  } else {
+    return num * factorial(num - 1);
+  }
+};
+
+// console.log(factorial(6));
+
+const fibonacci = (num) => {
+  if (num === 1 || num === 0) {
+    return num;
+  } else {
+    return fibonacci(num - 1) + fibonacci(num - 2);
+  }
+};
+// console.log(fibonacci(8));
+
+const numberRange = (num1, num2, arr = []) => {
+  if (num1 > num2) {
+    return arr;
+  } else {
+    arr.push(num1);
+    return numberRange(num1 + 1, num2, arr);
+  }
+};
+// console.log(numberRange(-5, 5));
