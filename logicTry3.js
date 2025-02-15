@@ -112,3 +112,27 @@ const numberRange = (num1, num2, arr = []) => {
   }
 };
 // console.log(numberRange(-5, 5));
+
+// 33
+
+const randomHexGenerator = () => {
+  const color = Math.floor(Math.random() * 10000000).toString(16);
+  console.log("#" + color);
+};
+// randomHexGenerator();
+
+// 34
+
+const removeDuplicate = (arr) => {
+  return arr.filter((value, index) => arr.indexOf(value) === index);
+};
+
+// console.log(removeDuplicate([1, 2, 2, 3, 2, 4, 1, 1, 3]));
+
+// 35
+
+const isEmptyObj = (obj) => {
+  return Object.keys(obj).length === 0 ? "empty" : "full";
+};
+
+// console.log(isEmptyObj({ naem: "jj" }));
